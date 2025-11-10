@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from 'framer-motion';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useRouter } from 'next/navigation';
 import { useAccount } from 'wagmi';
@@ -12,15 +12,7 @@ const CtaSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const router = useRouter();
   const { isConnected } = useAccount();
-  const hasRedirected = useRef(false);
   const videoUrl = "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/88ea6a2b-2840-409d-b447-9581e6d62701/generated_videos/underwater-scene-with-floating-documents-050ea00b-20251106100151.mp4";
-
-  useEffect(() => {
-    if (isConnected && !hasRedirected.current) {
-      hasRedirected.current = true;
-      router.push('/dashboard');
-    }
-  }, [isConnected, router]);
 
   return (
     <section ref={ref} className="w-full p-2.5 lg:p-5 bg-background">
@@ -78,7 +70,6 @@ const CtaSection = () => {
                         return (
                           <motion.button
                             onClick={() => {
-                              hasRedirected.current = false;
                               openConnectModal();
                             }}
                             whileHover={{ scale: 1.05 }}

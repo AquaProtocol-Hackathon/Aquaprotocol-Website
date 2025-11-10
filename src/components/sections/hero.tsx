@@ -4,20 +4,11 @@ import { motion } from 'framer-motion';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useRouter } from 'next/navigation';
 import { useAccount } from 'wagmi';
-import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const LetsTalkButton = () => {
   const router = useRouter();
   const { isConnected } = useAccount();
-  const hasRedirected = useRef(false);
-
-  useEffect(() => {
-    if (isConnected && !hasRedirected.current) {
-      hasRedirected.current = true;
-      router.push('/dashboard');
-    }
-  }, [isConnected, router]);
 
   return (
     <ConnectButton.Custom>
@@ -40,7 +31,6 @@ const LetsTalkButton = () => {
                 return (
                   <motion.button
                     onClick={() => {
-                      hasRedirected.current = false;
                       openConnectModal();
                     }}
                     whileHover={{ scale: 1.05 }}

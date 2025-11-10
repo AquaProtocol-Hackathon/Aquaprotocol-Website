@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { Play, Droplet } from "lucide-react";
+import { Droplet } from "lucide-react";
 import { motion, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
 
 interface StatCardProps {
@@ -48,7 +48,6 @@ const StatCard = ({ value, label, suffix }: StatCardProps) => {
 };
 
 const AboutSection = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -129,7 +128,7 @@ const AboutSection = () => {
           </h2>
         </motion.div>
 
-        {/* Video Player - Left Aligned */}
+        {/* Image - Left Aligned */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -141,40 +140,14 @@ const AboutSection = () => {
             transition={{ duration: 0.3 }}
             className="relative aspect-video w-full overflow-hidden rounded-3xl bg-gradient-to-br from-teal-100 to-cyan-100"
           >
-            {isPlaying ? (
-              <iframe
-                src="https://www.youtube.com/embed/8AHPXm9Y6mI?iv_load_policy=3&rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1"
-                title="Aqua Protocol Demo"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="absolute inset-0 h-full w-full"
-              ></iframe>
-            ) : (
-              <>
-                <Image
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/88ea6a2b-2840-409d-b447-9581e6d62701/generated_images/underwater-scene-with-flowing-teal-and-c-01619c40-20251104094432.jpg"
-                  alt="Aqua Protocol visualization"
-                  fill
-                  sizes="(max-width: 1023px) 100vw, 80vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-black/10"></div>
-                <button
-                  onClick={() => setIsPlaying(true)}
-                  aria-label="Play video"
-                  className="group absolute inset-0 flex items-center justify-center"
-                >
-                  <motion.div 
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-lg"
-                  >
-                    <Play className="ml-1 fill-accent text-accent" size={28} />
-                  </motion.div>
-                </button>
-              </>
-            )}
+            <Image
+              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/88ea6a2b-2840-409d-b447-9581e6d62701/generated_images/underwater-scene-with-flowing-teal-and-c-01619c40-20251104094432.jpg"
+              alt="Aqua Protocol visualization"
+              fill
+              sizes="(max-width: 1023px) 100vw, 80vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/10"></div>
           </motion.div>
         </motion.div>
 

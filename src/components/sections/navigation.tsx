@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Infinity } from "lucide-react";
 import { motion } from "framer-motion";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Button } from '@/components/ui/button';
@@ -51,8 +51,10 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { name: "Protocol", href: "#about" },
-    { name: "Tools", href: "#tools" },
+    { name: "Protocol", href: "#about", isExternal: false },
+    { name: "Tools", href: "#tools", isExternal: false },
+    { name: "Docs", href: "#", isExternal: true }, // URL will be provided separately
+    { name: "GitHub", href: "#", isExternal: true }, // URL will be provided separately
   ];
 
   return (
@@ -63,22 +65,36 @@ const Navigation = () => {
     >
       <nav className="bg-white/80 backdrop-blur-xl border-b border-border/50">
         <div className="mx-auto flex h-[74px] items-center justify-between px-6 lg:px-10">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center gap-2">
+            <Infinity className="w-7 h-7 text-teal-600" strokeWidth={2} />
             <p className="text-xl font-semibold text-black" style={{ fontFamily: 'var(--font-display)' }}>Aqua Protocol</p>
           </Link>
 
           <div className="hidden lg:flex flex-1 items-center justify-center">
             <div className="flex items-center gap-2">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => handleSmoothScroll(e, item.href)}
-                  className="py-2 px-5 rounded-full text-base font-medium text-medium-gray hover:text-black hover:bg-secondary/50 transition-all duration-200"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  {item.name}
-                </a>              
+                item.isExternal ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-2 px-5 rounded-full text-base font-medium text-medium-gray hover:text-black hover:bg-secondary/50 transition-all duration-200"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => handleSmoothScroll(e, item.href)}
+                    className="py-2 px-5 rounded-full text-base font-medium text-medium-gray hover:text-black hover:bg-secondary/50 transition-all duration-200"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
             </div>
           </div>
@@ -133,15 +149,29 @@ const Navigation = () => {
           >
             <div className="flex flex-col items-center gap-2 py-6 px-4">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => handleSmoothScroll(e, item.href)}
-                  className="w-full max-w-xs py-3 px-5 rounded-full text-base font-medium text-medium-gray hover:text-black hover:bg-secondary text-center transition-all"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  {item.name}
-                </a>
+                item.isExternal ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="w-full max-w-xs py-3 px-5 rounded-full text-base font-medium text-medium-gray hover:text-black hover:bg-secondary text-center transition-all"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => handleSmoothScroll(e, item.href)}
+                    className="w-full max-w-xs py-3 px-5 rounded-full text-base font-medium text-medium-gray hover:text-black hover:bg-secondary text-center transition-all"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
               <ConnectButton.Custom>
                 {({ account, chain, openConnectModal, mounted }) => {

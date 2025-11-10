@@ -77,22 +77,22 @@ const PricingCard = ({ tier }: { tier: (typeof pricingTiers)[0] }) => {
         <Icon className={`w-7 h-7 ${isDark ? "text-white" : "text-teal-primary"}`} strokeWidth={1.5} />
       </div>
 
-      <h3 className={`text-2xl font-semibold mb-2 ${isDark ? "text-white" : "text-foreground"}`}>
+      <h3 className={`text-2xl font-semibold mb-2 ${isDark ? "text-white" : "text-foreground"}`} style={{ fontFamily: 'var(--font-display)' }}>
         {tier.name}
       </h3>
       
       <div className="mb-6">
         <div className="flex items-baseline gap-1">
-          <span className={`text-5xl font-bold tracking-tight ${isDark ? "text-white" : "text-foreground"}`}>
+          <span className={`text-5xl font-bold tracking-tight ${isDark ? "text-white" : "text-foreground"}`} style={{ fontFamily: 'var(--font-display)' }}>
             {tier.price}
           </span>
           {tier.period && (
-            <span className={`text-sm ${isDark ? "text-white/70" : "text-muted-foreground"}`}>
+            <span className={`text-sm ${isDark ? "text-white/70" : "text-muted-foreground"}`} style={{ fontFamily: 'var(--font-display)' }}>
               {tier.period}
             </span>
           )}
         </div>
-        <p className={`text-sm mt-2 ${isDark ? "text-white/80" : "text-muted-foreground"}`}>
+        <p className={`text-sm mt-2 ${isDark ? "text-white/80" : "text-muted-foreground"}`} style={{ fontFamily: 'var(--font-display)' }}>
           {tier.description}
         </p>
       </div>
@@ -101,7 +101,7 @@ const PricingCard = ({ tier }: { tier: (typeof pricingTiers)[0] }) => {
         {tier.features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3">
             <Check className={`h-5 w-5 flex-shrink-0 mt-0.5 ${isDark ? "text-teal-200" : "text-teal-primary"}`} />
-            <span className={`text-sm leading-relaxed ${isDark ? "text-white/90" : "text-foreground"}`}>{feature}</span>
+            <span className={`text-sm leading-relaxed ${isDark ? "text-white/90" : "text-foreground"}`} style={{ fontFamily: 'var(--font-display)' }}>{feature}</span>
           </li>
         ))}
       </ul>
@@ -110,6 +110,7 @@ const PricingCard = ({ tier }: { tier: (typeof pricingTiers)[0] }) => {
         variant={isDark ? "default" : "outline"}
         size="lg"
         className={isDark ? "bg-white text-teal-primary hover:bg-white/95 shadow-lg" : ""}
+        style={{ fontFamily: 'var(--font-display)' }}
       >
         {tier.buttonText}
       </Button>
