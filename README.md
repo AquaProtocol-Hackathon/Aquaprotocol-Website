@@ -1,414 +1,119 @@
-# Aqua Protocol Website
+<div align="center">
 
-![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen?logo=node.js)
-![React](https://img.shields.io/badge/react-%5E18.0.0-61dafb?logo=react)
-![Build Status](https://img.shields.io/badge/build-passing-success)
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
-![Tailwind CSS](https://img.shields.io/badge/tailwind-%5E3.0-38bdf8?logo=tailwind-css)
+# AquaProtocol Website
 
-> A modern, minimal, and visually engaging redesign of the Aqua Protocol platform that transforms user experience through streamlined content, dynamic visuals, and intuitive navigation.
+Marketing site and wallet-enabled entrypoint for Aqua Protocol — privacy‑preserving data verification and attestation.
 
----
+[Docs](https://aquaprotocol.mintlify.app/) • [GitHub](https://github.com/inblockio) • Deployed on Vercel
 
-## 🎯 Project Overview
+</div>
 
-This project represents a complete UX/UI transformation of the Aqua Protocol ecosystem—encompassing the website, app, and documentation. Our team addressed critical user experience challenges in the original interface, which suffered from information overload and text-heavy layouts that made it difficult for users, especially newcomers, to understand the protocol's value proposition.
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
+- [Available Scripts](#available-scripts)
+- [Project Structure](#project-structure)
+- [Styling & UI](#styling--ui)
+- [Deployment](#deployment)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
 
-### The Challenge
+## Overview
+This repository contains the AquaProtocol marketing website and dashboard entrypoint. The UX emphasizes clarity, performance, and accessibility with a black/white base and teal accents used sparingly.
 
-- **Information Overload**: Dense, text-heavy interface overwhelmed users
-- **Poor Navigation**: Unclear information hierarchy and flow
-- **Weak Brand Identity**: Inconsistent visual language across platforms
-- **High Cognitive Load**: Difficult onboarding experience for new users
+## Features
+- Clean marketing site with sections for product, features, pricing, FAQ, and CTA
+- Wallet connect via RainbowKit/Wagmi (multi-chain)
+- Navigation with external links to Docs and GitHub
+- Next.js `next/image` optimization
+- Framer Motion animations and micro‑interactions
+- Tailwind CSS utility‑first styling
 
-### Our Solution
+## Tech Stack
+- Next.js 15 (App Router)
+- React 19
+- Tailwind CSS 4
+- RainbowKit + Wagmi
+- Framer Motion
 
-We reimagined the entire experience with a focus on:
+## Getting Started
+Prerequisites:
+- Node.js 18+ (Node 20+ recommended by some transitive deps)
+- npm (or pnpm/yarn/bun)
 
-- **Modern Visual Design**: Dynamic motion-based backgrounds that highlight Aqua's fluid, real-time data nature
-- **Brand Coherence**: Refreshed aqua-blue thematic palette strengthening brand identity
-- **Content Streamlining**: Consolidated redundant blocks and removed unnecessary text
-- **Intuitive Navigation**: Restructured information architecture for logical flow
-- **Enhanced Documentation**: Reorganized sections with improved clarity for both new users and developers
-
-### Impact
-
-The result is a cohesive UI/UX that:
-- Reduces cognitive load by 40%
-- Improves user onboarding experience
-- Increases engagement and retention
-- Aligns perfectly with Aqua Protocol's mission
-- Makes the platform faster, easier, and more enjoyable to explore
-
----
-
-##  System Architecture
-
-```mermaid
-graph TB
-    subgraph Client[" Client Layer"]
-        A[User Browser]
-    end
-    
-    subgraph Frontend[" Frontend Layer"]
-        B[React Application]
-        C[Motion Background Engine]
-        D[UI Components]
-        E[Tailwind CSS Theme]
-    end
-    
-    subgraph Content[" Content Layer"]
-        F[Documentation CMS]
-        G[Static Assets]
-        H[API Endpoints]
-    end
-    
-    subgraph Hosting[" Hosting & Deployment"]
-        I[Vercel]
-        J[Static Site Hosting]
-    end
-    
-    A --> B
-    B --> C
-    B --> D
-    B --> E
-    B --> F
-    B --> G
-    F --> H
-    B --> I
-    I --> J
-    
-    style B fill:#61dafb,stroke:#333,stroke-width:2px
-    style C fill:#00d4ff,stroke:#333,stroke-width:2px
-    style I fill:#22c55e,stroke:#333,stroke-width:2px
-```
-
-### Architecture Flow
-
-1. **User Interaction**: Users access the application through modern web browsers
-2. **React Frontend**: Single-page application built with React for dynamic rendering
-3. **Visual Engine**: Motion-based background system creates immersive experience
-4. **Theme System**: Tailwind CSS with custom aqua-blue palette ensures brand consistency
-5. **Content Delivery**: Documentation served via CMS/API or static markdown
-6. **Hosting**: Deployed on Vercel for optimal performance
-
----
-
-## 📁 Project Structure
-
-```
-Aquaprotocol-Website/
-│
-├── public/                      # Static assets
-│   ├── images/                  # Image files
-│   ├── icons/                   # Icon assets
-│   └── fonts/                   # Custom fonts
-│
-├── src/                         # Source code
-│   ├── components/              # Reusable UI components
-│   │   ├── common/              # Shared components
-│   │   ├── layout/              # Layout components
-│   │   └── motion/              # Motion background components
-│   │
-│   ├── pages/                   # Page-level components
-│   │   ├── Home.jsx             # Homepage
-│   │   ├── Documentation.jsx    # Docs page
-│   │   ├── App.jsx              # App showcase
-│   │   └── About.jsx            # About page
-│   │
-│   ├── styles/                  # Styling
-│   │   ├── globals.css          # Global styles
-│   │   ├── theme.css            # Theme variables
-│   │   └── animations.css       # Animation definitions
-│   │
-│   ├── utils/                   # Utility functions
-│   │   ├── helpers.js           # Helper functions
-│   │   └── constants.js         # App constants
-│   │
-│   ├── hooks/                   # Custom React hooks
-│   │
-│   └── App.jsx                  # Root component
-│
-├── .gitignore                   # Git ignore rules
-├── package.json                 # Dependencies & scripts
-├── tailwind.config.js           # Tailwind configuration
-├── vite.config.js               # Vite configuration (if using Vite)
-├── README.md                    # This file
-└── LICENSE                      # MIT License
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-Before you begin, ensure you have the following installed:
-
-- **Node.js** (v18.0.0 or higher)
-- **npm** (v8.0.0 or higher) or **yarn** (v1.22.0 or higher)
-- **Git**
-
-### Installation
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/AquaProtocol-Hackathon/Aquaprotocol-Website.git
-cd Aquaprotocol-Website
-```
-
-2. **Install dependencies**
-
-Using npm:
+Install dependencies:
 ```bash
 npm install
 ```
 
-Or using yarn:
-```bash
-yarn install
-```
-
-3. **Run the development server**
-
-Using npm:
+Run the dev server:
 ```bash
 npm run dev
 ```
 
-Or using yarn:
+Visit http://localhost:3000
+
+## Environment Variables
+Create `.env.local` at the project root:
 ```bash
-yarn dev
+NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_walletconnect_project_id
+```
+Get a Project ID at https://cloud.walletconnect.com
+
+## Available Scripts
+- `npm run dev` — Start development server (Turbopack)
+- `npm run build` — Production build
+- `npm run start` — Start production server
+- `npm run lint` — Run ESLint
+
+## Project Structure
+```
+aqua-protocol-website/
+├─ public/                    # Static assets
+├─ src/
+│  ├─ app/                    # App Router (routes, layout, providers)
+│  ├─ components/             # Reusable UI and section components
+│  ├─ lib/                    # Client configs (e.g., wagmi)
+│  └─ visual-edits/           # Internal tooling hooks/loaders
+├─ next.config.ts
+├─ tailwind.config.*
+└─ vercel.json                # CI install override for peer deps
 ```
 
-The application will be available at `http://localhost:3000` (or the port specified by your framework).
+## Styling & UI
+- Tailwind CSS utilities with a minimal, legible typographic scale
+- Accent color: teal (`#14b8a6`) used sparingly
+- RainbowKit theme overridden to align with brand colors (including error state styling)
 
-4. **Build for production**
+## Deployment
+Optimized for Vercel.
 
-Using npm:
+1) Ensure env vars are set in Vercel:
+   - `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID`
+
+2) Push to your main branch. Vercel will build automatically.
+
+3) CLI deploy:
 ```bash
-npm run build
+vercel --prod --yes
 ```
 
-Or using yarn:
-```bash
-yarn build
-```
-
-5. **Preview production build**
-
-Using npm:
-```bash
-npm run preview
-```
-
-Or using yarn:
-```bash
-yarn preview
-```
-
----
-
-## 🎨 Design System
-
-### Color Palette
-
-Our refreshed aqua-blue thematic palette:
-
-- **Primary Aqua**: `#00d4ff` - Main brand color
-- **Deep Ocean**: `#0077b6` - Accent and CTAs
-- **Light Wave**: `#90e0ef` - Highlights and hover states
-- **Dark Depth**: `#023e8a` - Text and headers
-- **Neutral Gray**: `#f8f9fa` - Backgrounds
-
-### Typography
-
-- **Headings**: Inter, system-ui, sans-serif
-- **Body**: Inter, system-ui, sans-serif
-- **Code**: Fira Code, monospace
-
-### Motion Principles
-
-- **Fluid Animations**: Smooth, water-like transitions
-- **Purposeful Movement**: Motion that enhances understanding
-- **Performance**: 60fps animations with GPU acceleration
-- **Accessibility**: Respects `prefers-reduced-motion`
-
----
-
-## 💻 Usage
-
-### Development Workflow
-
-1. Start the development server (see Installation step 3)
-2. Navigate to `http://localhost:3000` in your browser
-3. Make changes to source files - hot reload will update automatically
-4. Test across different screen sizes and browsers
-
-### Key Features to Explore
-
-- **Homepage**: Experience the dynamic motion background and streamlined messaging
-- **Documentation**: Navigate through the reorganized, developer-friendly docs
-- **App Showcase**: Explore the visual presentation of Aqua Protocol's capabilities
-- **Theme System**: Consistent aqua-blue branding throughout all pages
-
-### Environment Variables
-
-Create a `.env` file in the root directory for configuration:
-
-```env
-VITE_API_URL=your_api_url
-VITE_APP_NAME=Aqua Protocol
-VITE_ENVIRONMENT=development
-```
-
----
-
-##  Testing
-
-### Run Tests
-
-```bash
-npm run test
-```
-
-### Run Tests with Coverage
-
-```bash
-npm run test:coverage
-```
-
-### E2E Tests
-
-```bash
-npm run test:e2e
-```
-
----
-
-##  Deployment
-
-### Vercel Deployment
-
-1. Install Vercel CLI:
-```bash
-npm i -g vercel
-```
-
-2. Deploy:
-```bash
-vercel
-```
-
-### Manual Deployment
-
-1. Build the project:
-```bash
-npm run build
-```
-
-2. Upload the `dist` folder to your hosting provider
-
----
-
-## 🤝 Contributing
-
-We welcome contributions from the community! Here's how you can help:
-
-### Contribution Guidelines
-
-1. **Fork the repository**
-   
-   Click the "Fork" button at the top right of the repository page.
-
-2. **Create a feature branch**
-
-```bash
-git checkout -b feature/AmazingFeature
-```
-
-3. **Make your changes**
-
-   - Write clean, readable code
-   - Follow the existing code style
-   - Add comments for complex logic
-   - Ensure all tests pass
-
-4. **Commit your changes**
-
-```bash
-git commit -m "Add: Amazing new feature"
-```
-
-Use conventional commit messages:
-- `feat:` New feature
-- `fix:` Bug fix
-- `docs:` Documentation changes
-- `style:` Code style changes (formatting, etc.)
-- `refactor:` Code refactoring
-- `test:` Test additions or changes
-- `chore:` Build process or auxiliary tool changes
-
-5. **Push to your branch**
-
-```bash
-git push origin feature/AmazingFeature
-```
-
-6. **Open a Pull Request**
-
-   - Provide a clear description of your changes
-   - Reference any related issues
-   - Include screenshots for UI changes
-
-## 🛠️ Tech Stack
-
-- **Frontend Framework**: React 18+
-- **Styling**: Tailwind CSS 3+
-- **Build Tool**: Vite / Create React App
-- **Motion**: Framer Motion / CSS Animations
-- **State Management**: React Context / Redux (if applicable)
-- **Routing**: React Router v6
-- **HTTP Client**: Axios / Fetch API
-- **Code Quality**: ESLint, Prettier
-- **Version Control**: Git, GitHub
-
----
-
-
-## 📄 License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- **Aqua Protocol Team**: For their vision and collaboration
-- **Aqua Community**: For valuable feedback and support
-- **Hackathon Organizers**: For providing the platform to innovate
-- **Contributors**: Everyone who has contributed to this project
-
----
-
-## 📈 Changelog
-
-### Version 1.0.0 (Current)
-- Initial release with complete redesign
-- Dynamic motion-based background
-- Refreshed aqua-blue theme
-- Streamlined content structure
-- Reorganized documentation
-- Improved navigation system
-
----
-
-<div align="center">
-
-**Made with 💙 by the Wild Flower Team**
-
-[⬆ Back to Top](#aqua-protocol-website)
-
-</div>
+Note: `vercel.json` uses `npm install --legacy-peer-deps` during CI to work around a known peer‑dependency conflict.
+
+## Troubleshooting
+- Wallet shows “Wrong network”:
+  - Switch to a supported chain; RainbowKit theme is customized to show teal, not orange, for the state.
+- Build fails on Vercel due to peer deps:
+  - Handled by `vercel.json`; ensure this file is present.
+- Images not rendering:
+  - Confirm your remote hosts are whitelisted in `next.config.ts` under `images.remotePatterns`.
+
+## Contributing
+Issues and PRs are welcome. Keep changes scoped, follow existing patterns, and use clear commit messages.
+
+## License
+Open-source under GPL‑3.0 & MIT (see site footer for attribution).
