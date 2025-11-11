@@ -40,10 +40,10 @@ export default function TemplatesPage() {
           {[1, 2, 3, 4, 5, 6].map((item) => (
             <div
               key={item}
-              className="bg-white/5 rounded-xl border border-white/10 hover:border-teal-500/50 transition-all cursor-pointer p-6"
+              className="bg-white/5 rounded-xl border border-teal-400/60 transition-all cursor-pointer p-6 group"
             >
-              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-4">
-                <FileText className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/20 transition-colors">
+                <FileText className="w-6 h-6 text-white group-hover:text-teal-400 transition-colors" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Template {item}</h3>
               <p className="text-sm text-white/60 mb-4">Document template for contracts and agreements</p>

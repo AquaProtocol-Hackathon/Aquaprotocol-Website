@@ -31,7 +31,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <p className="text-sm font-medium text-primary">Protocol</p>
             <ul className="space-y-3">
-              <li><Link href="/protocol" className="text-sm text-muted-foreground transition-colors hover:text-accent">Documentation</Link></li>
+              <li><a href="https://aquaprotocol.mintlify.app/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-accent">Documentation</a></li>
               <li><a href="https://aquafier.inblock.io" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-accent">Aquafier</a></li>
               <li><a href="https://github.com/inblockio" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-accent">GitHub</a></li>
               <li><Link href="/tools" className="text-sm text-muted-foreground transition-colors hover:text-accent">Developer Tools</Link></li>
@@ -69,7 +69,7 @@ export default function Footer() {
             © 2025 Aqua Protocol. Open-source under GPL-3.0 & MIT licenses.
           </p>
           <div className="flex items-center gap-6">
-            <a href={ATTRIBUTION_LINKS.protocol} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-accent">
+            <a href="https://aquaprotocol.mintlify.app/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-accent">
               Protocol Docs
             </a>
             <a href={ATTRIBUTION_LINKS.inblock} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-accent">

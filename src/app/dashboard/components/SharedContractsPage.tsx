@@ -36,19 +36,19 @@ export default function SharedContractsPage() {
           {[1, 2, 3, 4, 5].map((item) => (
             <div
               key={item}
-              className="bg-white/5 rounded-xl border border-white/10 hover:border-teal-500/50 transition-all cursor-pointer p-6"
+              className="bg-white/5 rounded-xl border border-teal-400/60 transition-all cursor-pointer p-6 group"
             >
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-4 flex-1">
-                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-                    <FileText className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-teal-500/20 transition-colors">
+                    <FileText className="w-6 h-6 text-white group-hover:text-teal-400 transition-colors" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-white mb-1">Contract {item}</h3>
                     <p className="text-sm text-white/60 mb-3">Shared document for review and signing</p>
                     <div className="flex items-center gap-4 text-xs text-white/50">
                       <div className="flex items-center gap-1">
-                        <Users size={14} />
+                        <Users size={14} className="group-hover:text-teal-400 transition-colors" />
                         <span>3 participants</span>
                       </div>
                       <span>Shared 5 days ago</span>

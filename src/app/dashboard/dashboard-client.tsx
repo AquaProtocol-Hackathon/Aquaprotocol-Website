@@ -459,9 +459,9 @@ export default function DashboardClient() {
 
                 {/* Info Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                  <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-teal-500/50 transition-all cursor-pointer">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mb-4">
-                      <FileSignature className="w-5 h-5 text-white" fill="currentColor" />
+                  <div className="bg-white/5 rounded-xl p-6 border border-teal-400/60 transition-all cursor-pointer group">
+                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/20 transition-colors">
+                      <FileSignature className="w-5 h-5 text-white group-hover:text-teal-400 transition-colors" fill="currentColor" />
                     </div>
                     <h4 className="text-base font-semibold text-white mb-2">
                       Digital Signatures
@@ -471,9 +471,9 @@ export default function DashboardClient() {
                     </p>
                   </div>
 
-                  <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-teal-500/50 transition-all cursor-pointer">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mb-4">
-                      <LinkIcon className="w-5 h-5 text-white" fill="currentColor" />
+                  <div className="bg-white/5 rounded-xl p-6 border border-teal-400/60 transition-all cursor-pointer group">
+                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/20 transition-colors">
+                      <LinkIcon className="w-5 h-5 text-white group-hover:text-teal-400 transition-colors" fill="currentColor" />
                     </div>
                     <h4 className="text-base font-semibold text-white mb-2">
                       Claims & Attestation
@@ -483,9 +483,9 @@ export default function DashboardClient() {
                     </p>
                   </div>
 
-                  <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-teal-500/50 transition-all cursor-pointer">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mb-4">
-                      <User className="w-5 h-5 text-white" fill="currentColor" />
+                  <div className="bg-white/5 rounded-xl p-6 border border-teal-400/60 transition-all cursor-pointer group">
+                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/20 transition-colors">
+                      <User className="w-5 h-5 text-white group-hover:text-teal-400 transition-colors" fill="currentColor" />
                     </div>
                     <h4 className="text-base font-semibold text-white mb-2">
                       Identity Profile

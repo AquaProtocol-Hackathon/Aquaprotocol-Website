@@ -40,20 +40,20 @@ export default function WorkflowsPage() {
           {[1, 2, 3, 4, 5, 6].map((item) => (
             <div
               key={item}
-              className="bg-white/5 rounded-xl border border-white/10 hover:border-teal-500/50 transition-all cursor-pointer p-6"
+              className="bg-white/5 rounded-xl border border-teal-400/60 transition-all cursor-pointer p-6 group"
             >
-              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-4">
-                <Workflow className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/20 transition-colors">
+                <Workflow className="w-6 h-6 text-white group-hover:text-teal-400 transition-colors" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Workflow {item}</h3>
               <p className="text-sm text-white/60 mb-4">Multi-step document signing process</p>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-xs text-white/50">
-                  <Clock size={14} />
+                  <Clock size={14} className="group-hover:text-teal-400 transition-colors" />
                   <span>Active</span>
                 </div>
-                <button className="flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs font-medium transition-all">
-                  <Play size={12} />
+                <button className="flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs font-medium transition-all group/btn">
+                  <Play size={12} className="group-hover/btn:text-teal-400 transition-colors" />
                   <span>Run</span>
                 </button>
               </div>

@@ -187,7 +187,7 @@ const AboutSection = () => {
             From financial institutions to legal compliance, enterprises worldwide trust Aqua for digital notarization, audit trails, and privacy-preserving data governance. Your data stays private until you choose to share—complete digital sovereignty.
           </p>
           <motion.a
-            href="https://aqua-protocol.org/docs/v3/intro"
+            href="https://aquaprotocol.mintlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

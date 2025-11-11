@@ -7,7 +7,7 @@ import { Providers } from "@/components/providers";
 
 export const metadata: Metadata = {
   title: "Aquafier - Digital Agency",
-  description: "We help you shape elegant solutions with confidence",
+  description: "AquaProtocol Website",
 };
 
 export default function RootLayout({

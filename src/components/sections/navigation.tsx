@@ -53,8 +53,8 @@ const Navigation = () => {
   const navItems = [
     { name: "Protocol", href: "#about", isExternal: false },
     { name: "Tools", href: "#tools", isExternal: false },
-    { name: "Docs", href: "#", isExternal: true }, // URL will be provided separately
-    { name: "GitHub", href: "#", isExternal: true }, // URL will be provided separately
+    { name: "Docs", href: "https://aquaprotocol.mintlify.app/", isExternal: true },
+    { name: "GitHub", href: "https://github.com/inblockio", isExternal: true },
   ];
 
   return (
